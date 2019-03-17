@@ -1,1 +1,1 @@
-# android-arch-sample
+# Android Architecture Sample

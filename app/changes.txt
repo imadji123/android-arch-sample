@@ -1,0 +1,7 @@
+2019-03-15:
+- Updated .gitignore (refer to gitignore.io)
+- Added version properties
+- Added build flavors (dev & prod)
+- Added default proguard debug
+- Added keystore properties (debug & release)
+- Added common libraries (Butterknife, Glide, Retrofit)
