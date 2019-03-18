@@ -102,6 +102,7 @@ ext {
     glideVersion = "4.8.0"
     okHttpVersion = "3.12.0"
     retrofitVersion = "2.5.0"
+    firebaseVersion = "16.0.7"
     espressoVersion = "3.0.2"
     junitVersion = "4.12"
     mockitoVersion = "2.12.0"
@@ -132,6 +133,9 @@ dependencies {
     implementation "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
 
+    /* Firebase */
+    implementation "com.google.firebase:firebase-core:$firebaseVersion"
+
     /* Test Libs */
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
@@ -139,3 +143,5 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'

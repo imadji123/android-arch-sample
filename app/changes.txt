@@ -1,3 +1,10 @@
+2019-03-18:
+- Added firebase sdk
+- Added default dimens value
+- Added overlay colors value
+- Updated proguard (Retrofit)
+- Updated primary colors
+
 2019-03-15:
 - Updated .gitignore (refer to gitignore.io)
 - Added version properties
