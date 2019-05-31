@@ -1,5 +1,6 @@
 2019-05-29:
 - Added dependencies.gradle
+- Initial domain layer
 
 2019-03-18:
 - Added firebase sdk
