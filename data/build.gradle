@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner rootProject.ext.testInstrumentationRunner
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "$project.rootDir/tools/rules-proguard-debug.pro"
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "$project.rootDir/tools/rules-proguard.pro"
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+}
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+    def testDependencies = rootProject.ext.testDependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation dataDependencies.appCompat
+
+    /* Retrofit using Okhttp, Okhttp Logging Interceptor, Gson */
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitGson
+    implementation dataDependencies.okHttp
+    implementation dataDependencies.okHttpLogging
+
+    /* Test Libs */
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockitoCore
+}

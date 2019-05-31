@@ -70,10 +70,29 @@
 # Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
 -dontwarn kotlin.Unit
 
-# Top-level functions that can only be used by Kotlin.
--dontwarn retrofit2.KotlinExtensions
-
 # With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
 # and replaces all potential values with null. Explicitly keeping the interfaces prevents this.
 -if interface * { @retrofit2.http.* <methods>; }
 -keep,allowobfuscation interface <1>
+
+# RxJava
+-keep class rx.schedulers.Schedulers {
+    public static <methods>;
+}
+-keep class rx.schedulers.ImmediateScheduler {
+    public <methods>;
+}
+-keep class rx.schedulers.TestScheduler {
+    public <methods>;
+}
+-keep class rx.schedulers.Schedulers {
+    public static ** test();
+}
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+    long producerIndex;
+    long consumerIndex;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+    long producerNode;
+    long consumerNode;
+}

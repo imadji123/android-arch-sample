@@ -1,3 +1,6 @@
+2019-06-01:
+- Initial data layer
+
 2019-05-29:
 - Added dependencies.gradle
 - Initial domain layer

@@ -101,6 +101,8 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':domain')
+
     implementation appDependencies.appCompat
     implementation appDependencies.design
     implementation appDependencies.recyclerView
