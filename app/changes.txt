@@ -3,6 +3,8 @@
 - Added home interactor
 - Added get popular movies use case
 - Added rxJava & rxAndroid library
+- Added retrofit api client
+- Implement fetch popular movies from api
 
 2019-06-01:
 - Initial data layer
