@@ -45,8 +45,13 @@ dependencies {
     /* Retrofit using Okhttp, Okhttp Logging Interceptor, Gson */
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitGson
+    implementation dataDependencies.retrofitRxJava
     implementation dataDependencies.okHttp
     implementation dataDependencies.okHttpLogging
+
+    /* RxAndroid, RxJava */
+    implementation dataDependencies.rxAndroid
+    implementation dataDependencies.rxJava
 
     /* Test Libs */
     testImplementation testDependencies.jUnit

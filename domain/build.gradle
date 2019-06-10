@@ -9,6 +9,10 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    /* RxAndroid, RxJava */
+    implementation domainDependencies.rxAndroid
+    implementation domainDependencies.rxJava
+
     /* Test Libs */
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockitoCore

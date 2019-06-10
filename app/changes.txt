@@ -1,3 +1,9 @@
+2019-06-10:
+- Added movie repository interface
+- Added home interactor
+- Added get popular movies use case
+- Added rxJava & rxAndroid library
+
 2019-06-01:
 - Initial data layer
 
