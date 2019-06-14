@@ -1,6 +1,6 @@
-package com.imadji.arch.data.datasource.network.interceptor;
+package com.imadji.arch.data.datasource.remote.interceptor;
 
-import com.imadji.arch.data.datasource.network.TmdbService;
+import com.imadji.arch.data.datasource.remote.api.TmdbService;
 
 import java.io.IOException;
 

@@ -1,0 +1,38 @@
+package com.imadji.arch.data.datasource.cache;
+
+import com.imadji.arch.data.datasource.MovieDataSource;
+import com.imadji.arch.domain.model.Movie;
+
+import java.util.List;
+
+import io.reactivex.Completable;
+import io.reactivex.Single;
+
+public class CachedMovieDataSource implements MovieDataSource {
+    private MovieCache movieCache;
+
+    public CachedMovieDataSource(MovieCache movieCache) {
+        this.movieCache = movieCache;
+    }
+
+    @Override
+    public Single<List<Movie>> getPopularMovies() {
+        return movieCache.getAll();
+    }
+
+    public boolean isEmpty() {
+        return movieCache.isEmpty();
+    }
+
+    public boolean isExpired() {
+        return movieCache.isExpired();
+    }
+
+    public Completable clear() {
+        return movieCache.clear();
+    }
+
+    public Completable saveAll(List<Movie> movies) {
+        return movieCache.saveAll(movies).doOnComplete(() -> movieCache.setLastCacheTime(System.currentTimeMillis()));
+    }
+}

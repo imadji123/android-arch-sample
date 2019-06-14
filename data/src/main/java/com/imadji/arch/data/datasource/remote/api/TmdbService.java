@@ -1,7 +1,7 @@
-package com.imadji.arch.data.datasource.network;
+package com.imadji.arch.data.datasource.remote.api;
 
 import com.imadji.arch.data.BuildConfig;
-import com.imadji.arch.data.datasource.network.interceptor.RequestInterceptor;
+import com.imadji.arch.data.datasource.remote.interceptor.RequestInterceptor;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
