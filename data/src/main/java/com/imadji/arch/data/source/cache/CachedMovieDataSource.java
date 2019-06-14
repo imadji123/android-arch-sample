@@ -1,6 +1,6 @@
-package com.imadji.arch.data.datasource.cache;
+package com.imadji.arch.data.source.cache;
 
-import com.imadji.arch.data.datasource.MovieDataSource;
+import com.imadji.arch.data.source.MovieDataSource;
 import com.imadji.arch.domain.model.Movie;
 
 import java.util.List;

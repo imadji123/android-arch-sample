@@ -1,8 +1,8 @@
-package com.imadji.arch.data.datasource.remote;
+package com.imadji.arch.data.source.remote;
 
-import com.imadji.arch.data.datasource.MovieDataSource;
-import com.imadji.arch.data.datasource.remote.api.TmdbApi;
-import com.imadji.arch.data.datasource.remote.response.MovieListResponse;
+import com.imadji.arch.data.source.MovieDataSource;
+import com.imadji.arch.data.source.remote.api.TmdbApi;
+import com.imadji.arch.data.source.remote.response.MovieListResponse;
 import com.imadji.arch.domain.model.Movie;
 
 import java.util.List;

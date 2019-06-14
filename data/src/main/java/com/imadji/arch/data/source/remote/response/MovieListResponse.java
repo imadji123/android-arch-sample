@@ -1,4 +1,4 @@
-package com.imadji.arch.data.datasource.remote.response;
+package com.imadji.arch.data.source.remote.response;
 
 import com.google.gson.annotations.SerializedName;
 import com.imadji.arch.domain.model.Movie;

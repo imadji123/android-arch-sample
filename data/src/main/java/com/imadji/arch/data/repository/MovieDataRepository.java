@@ -1,7 +1,7 @@
 package com.imadji.arch.data.repository;
 
-import com.imadji.arch.data.datasource.cache.CachedMovieDataSource;
-import com.imadji.arch.data.datasource.remote.RemoteMovieDataSource;
+import com.imadji.arch.data.source.cache.CachedMovieDataSource;
+import com.imadji.arch.data.source.remote.RemoteMovieDataSource;
 import com.imadji.arch.domain.model.Movie;
 import com.imadji.arch.domain.repository.MovieRepository;
 

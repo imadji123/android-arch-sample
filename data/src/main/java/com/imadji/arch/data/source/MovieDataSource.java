@@ -1,4 +1,4 @@
-package com.imadji.arch.data.datasource;
+package com.imadji.arch.data.source;
 
 import com.imadji.arch.domain.model.Movie;
 
