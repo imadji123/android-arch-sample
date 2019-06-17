@@ -10,8 +10,8 @@ import java.util.List;
 import io.reactivex.Single;
 
 public class MovieDataRepository implements MovieRepository {
-    private CachedMovieDataSource cachedDataSource;
-    private RemoteMovieDataSource remoteDataSource;
+    private final CachedMovieDataSource cachedDataSource;
+    private final RemoteMovieDataSource remoteDataSource;
 
     public MovieDataRepository(CachedMovieDataSource cachedDataSource, RemoteMovieDataSource remoteDataSource) {
         this.cachedDataSource = cachedDataSource;
@@ -26,5 +26,4 @@ public class MovieDataRepository implements MovieRepository {
             return remoteDataSource.getPopularMovies().doOnSuccess(movies -> cachedDataSource.saveAll(movies));
         }
     }
-
 }

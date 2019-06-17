@@ -1,4 +1,4 @@
-package com.imadji.arch.data.source.cache.preference;
+package com.imadji.arch.data.source.local.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;

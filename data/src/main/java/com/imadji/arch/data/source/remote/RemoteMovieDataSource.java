@@ -10,7 +10,7 @@ import java.util.List;
 import io.reactivex.Single;
 
 public class RemoteMovieDataSource implements MovieDataSource {
-    private TmdbApi tmdbApi;
+    private final TmdbApi tmdbApi;
 
     public RemoteMovieDataSource(TmdbApi tmdbApi) {
         this.tmdbApi = tmdbApi;

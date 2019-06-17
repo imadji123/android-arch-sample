@@ -1,6 +1,6 @@
 package com.imadji.arch.data.source.cache;
 
-import com.imadji.arch.data.source.cache.preference.PreferencesHelper;
+import com.imadji.arch.data.source.local.preference.PreferencesHelper;
 import com.imadji.arch.domain.model.Movie;
 
 import java.util.ArrayList;
