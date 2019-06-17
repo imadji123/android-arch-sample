@@ -119,6 +119,10 @@ dependencies {
     /* Firebase */
     implementation appDependencies.firebaseCore
 
+    /* RxJava RxAndroid */
+    implementation appDependencies.rxJava
+    implementation appDependencies.rxAndroid
+
     /* Test Libs */
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockitoCore
