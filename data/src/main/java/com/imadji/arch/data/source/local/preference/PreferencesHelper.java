@@ -3,15 +3,24 @@ package com.imadji.arch.data.source.local.preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class PreferencesHelper {
+public class PreferencesHelper implements Preferences {
     private static final String PREF_NAME = "com.imadji.arch.sample.cache.preferences";
     private static final String PREF_KEY_LAST_CACHE_TIME = "last_cache_time";
 
-    private static PreferencesHelper preferencesHelper;
     private SharedPreferences sharedPreferences;
 
     public PreferencesHelper(Context context) {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+    }
+
+    @Override
+    public void setLastCacheTime(long lastCacheTime) {
+        writeLong(PREF_KEY_LAST_CACHE_TIME, lastCacheTime);
+    }
+
+    @Override
+    public long getLastCacheTime() {
+        return readLong(PREF_KEY_LAST_CACHE_TIME, 0);
     }
 
     private void writeString(String key, String value) {
@@ -56,13 +65,5 @@ public class PreferencesHelper {
 
     private boolean readBoolean(String key, boolean defaultValue) {
         return sharedPreferences.getBoolean(key, defaultValue);
-    }
-
-    public void setLastCacheTime(long lastCacheTime) {
-        writeLong(PREF_KEY_LAST_CACHE_TIME, lastCacheTime);
-    }
-
-    public long getLastCacheTime() {
-        return readLong(PREF_KEY_LAST_CACHE_TIME, 0);
     }
 }

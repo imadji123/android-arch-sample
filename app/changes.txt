@@ -1,3 +1,9 @@
+2019-06-19:
+- Added dagger2 library
+- Created AppModule, NetworkModule & DataModule
+- Created MainComponent
+- Updated logic on caching remote data
+
 2019-06-14:
 - Implement repository pattern on data layer
 

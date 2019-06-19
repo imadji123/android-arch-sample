@@ -102,6 +102,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':domain')
+    implementation project(':data')
 
     implementation appDependencies.appCompat
     implementation appDependencies.design
@@ -122,6 +123,16 @@ dependencies {
     /* RxJava RxAndroid */
     implementation appDependencies.rxJava
     implementation appDependencies.rxAndroid
+
+    /* Retrofit */
+    implementation appDependencies.retrofit
+    implementation appDependencies.retrofitGson
+    implementation appDependencies.retrofitRxJava
+    implementation appDependencies.okHttpLogging
+
+    /* Dagger for Dependency Injection */
+    implementation appDependencies.dagger
+    annotationProcessor appDependencies.daggerCompiler
 
     /* Test Libs */
     testImplementation testDependencies.jUnit

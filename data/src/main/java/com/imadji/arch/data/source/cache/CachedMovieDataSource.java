@@ -33,6 +33,6 @@ public class CachedMovieDataSource implements MovieDataSource {
     }
 
     public Completable saveAll(List<Movie> movies) {
-        return movieCache.saveAll(movies).doOnComplete(() -> movieCache.setLastCacheTime(System.currentTimeMillis()));
+        return movieCache.saveAll(movies);
     }
 }

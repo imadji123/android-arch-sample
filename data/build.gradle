@@ -42,12 +42,10 @@ dependencies {
 
     implementation dataDependencies.appCompat
 
-    /* Retrofit using Okhttp, Okhttp Logging Interceptor, Gson */
+    /* Retrofit */
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitGson
     implementation dataDependencies.retrofitRxJava
-    implementation dataDependencies.okHttp
-    implementation dataDependencies.okHttpLogging
 
     /* RxAndroid, RxJava */
     implementation dataDependencies.rxAndroid

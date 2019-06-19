@@ -23,7 +23,7 @@ public class MovieDataRepository implements MovieRepository {
         if (!cachedDataSource.isEmpty() && !cachedDataSource.isExpired()) {
             return cachedDataSource.getPopularMovies();
         } else {
-            return remoteDataSource.getPopularMovies().doOnSuccess(movies -> cachedDataSource.saveAll(movies));
+            return remoteDataSource.getPopularMovies().doOnSuccess(cachedDataSource::saveAll);
         }
     }
 }

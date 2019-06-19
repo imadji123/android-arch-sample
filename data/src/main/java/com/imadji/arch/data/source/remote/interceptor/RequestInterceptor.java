@@ -1,7 +1,5 @@
 package com.imadji.arch.data.source.remote.interceptor;
 
-import com.imadji.arch.data.source.remote.api.TmdbService;
-
 import java.io.IOException;
 
 import okhttp3.HttpUrl;
@@ -10,6 +8,11 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class RequestInterceptor implements Interceptor {
+    private String apiKey;
+
+    public RequestInterceptor(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -17,7 +20,7 @@ public class RequestInterceptor implements Interceptor {
         HttpUrl originalHttpUrl = originalRequest.url();
 
         HttpUrl newUrl = originalHttpUrl.newBuilder()
-                .addQueryParameter("api_key", TmdbService.API_KEY)
+                .addQueryParameter("api_key", apiKey)
                 .build();
 
         Request.Builder requestBuilder = originalRequest.newBuilder()

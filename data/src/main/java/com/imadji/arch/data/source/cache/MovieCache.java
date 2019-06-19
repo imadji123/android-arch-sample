@@ -11,7 +11,6 @@ public interface MovieCache {
 
     boolean isEmpty();
     boolean isExpired();
-    void setLastCacheTime(long lastCacheTime);
     Completable clear();
     Completable saveAll(List<Movie> movies);
     Single<List<Movie>> getAll();
