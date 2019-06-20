@@ -106,13 +106,13 @@ dependencies {
 
     implementation appDependencies.appCompat
     implementation appDependencies.design
+    implementation appDependencies.legacySupport
     implementation appDependencies.recyclerView
     implementation appDependencies.constraintLayout
 
     /* Android Architecture Components */
     implementation appDependencies.lifecycleExtension
     implementation appDependencies.lifecycleCommon
-    implementation appDependencies.lifecycleReactive
 
     /* Butterknife for inject Views */
     implementation appDependencies.butterknife

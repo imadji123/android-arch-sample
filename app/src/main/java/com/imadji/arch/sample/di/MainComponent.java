@@ -1,6 +1,7 @@
 package com.imadji.arch.sample.di;
 
-import com.imadji.arch.sample.MainActivity;
+import com.imadji.arch.sample.di.home.HomeModule;
+import com.imadji.arch.sample.di.home.HomeSubComponent;
 import com.imadji.arch.sample.di.module.AppModule;
 import com.imadji.arch.sample.di.module.DataModule;
 import com.imadji.arch.sample.di.module.DomainModule;
@@ -17,7 +18,5 @@ import dagger.Component;
 @Singleton
 @Component(modules = { AppModule.class, NetworkModule.class, DataModule.class, DomainModule.class })
 public interface MainComponent {
-
-    void inject(MainActivity mainActivity);
-
+    HomeSubComponent plus(HomeModule homeModule);
 }

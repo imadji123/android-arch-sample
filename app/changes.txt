@@ -4,6 +4,7 @@
 - Implement get popular movies use case
 - Migrate to AndroidX
 - Add architecture lifecycle components (LiveData & ViewModel)
+- Created initial home screen with ViewModel
 
 2019-06-19:
 - Added dagger2 library

@@ -28,11 +28,11 @@ ext {
     // App
     appDependencies = [
             appCompat           : "androidx.appcompat:appcompat:$androidXVersion",
+            legacySupport       : "androidx.legacy:legacy-support-v4:$androidXVersion",
             recyclerView        : "androidx.recyclerview:recyclerview:$androidXVersion",
             constraintLayout    : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
             lifecycleExtension  : "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion",
             lifecycleCommon     : "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion",
-            lifecycleReactive   : "androidx.lifecycle:lifecycle-reactivestreams:$archLifecycleVersion",
             design              : "com.google.android.material:material:$androidMaterialVersion",
             butterknife         : "com.jakewharton:butterknife:$butterknifeVersion",
             butterknifeCompiler : "com.jakewharton:butterknife-compiler:$butterknifeVersion",
