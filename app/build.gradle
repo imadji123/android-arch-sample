@@ -109,6 +109,11 @@ dependencies {
     implementation appDependencies.recyclerView
     implementation appDependencies.constraintLayout
 
+    /* Android Architecture Components */
+    implementation appDependencies.lifecycleExtension
+    implementation appDependencies.lifecycleCommon
+    implementation appDependencies.lifecycleReactive
+
     /* Butterknife for inject Views */
     implementation appDependencies.butterknife
     annotationProcessor appDependencies.butterknifeCompiler
@@ -135,6 +140,7 @@ dependencies {
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.robolectric
+    testImplementation testDependencies.lifecycleTest
     androidTestImplementation testDependencies.androidTestRunner
     androidTestImplementation testDependencies.mockitoAndroid
     androidTestImplementation testDependencies.espressoCore

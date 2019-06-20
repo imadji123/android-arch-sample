@@ -6,8 +6,9 @@ ext {
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
     // Libraries Version
-    androidXSupportVersion = "1.0.0"
+    androidXVersion = "1.0.0"
     androidMaterialVersion = "1.0.0-rc01"
+    archLifecycleVersion = "2.0.0"
     constraintLayoutVersion = "1.1.2"
     butterknifeVersion = "10.1.0"
     glideVersion = "4.9.0"
@@ -18,16 +19,20 @@ ext {
     rxJavaVersion = "2.2.9"
     daggerVersion = "2.23.1"
     espressoVersion = "3.1.0"
-    jUnitVersion = "1.1.0"
+    jUnitVersion = "4.12"
     mockitoVersion = "2.12.0"
     robolectricVersion = "4.2"
-    androidXTestRunnerVersion = "1.1.0"
+    androidXTestVersion = "1.1.1"
+    archTestingVersion = "1.1.1"
 
     // App
     appDependencies = [
-            appCompat           : "androidx.appcompat:appcompat:$androidXSupportVersion",
-            recyclerView        : "androidx.recyclerview:recyclerview:$androidXSupportVersion",
+            appCompat           : "androidx.appcompat:appcompat:$androidXVersion",
+            recyclerView        : "androidx.recyclerview:recyclerview:$androidXVersion",
             constraintLayout    : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            lifecycleExtension  : "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion",
+            lifecycleCommon     : "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion",
+            lifecycleReactive   : "androidx.lifecycle:lifecycle-reactivestreams:$archLifecycleVersion",
             design              : "com.google.android.material:material:$androidMaterialVersion",
             butterknife         : "com.jakewharton:butterknife:$butterknifeVersion",
             butterknifeCompiler : "com.jakewharton:butterknife-compiler:$butterknifeVersion",
@@ -49,7 +54,7 @@ ext {
 
     // Data
     dataDependencies = [
-            appCompat           : "androidx.appcompat:appcompat:$androidXSupportVersion",
+            appCompat           : "androidx.appcompat:appcompat:$androidXVersion",
             retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitGson        : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             retrofitRxJava      : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
@@ -60,11 +65,12 @@ ext {
 
     // Test
     testDependencies = [
-            jUnit               : "androidx.test.ext:junit:$jUnitVersion",
+            jUnit               : "junit:junit:$jUnitVersion",
             mockitoCore         : "org.mockito:mockito-core:$mockitoVersion",
             mockitoAndroid      : "org.mockito:mockito-android:$mockitoVersion",
             robolectric         : "org.robolectric:robolectric:$robolectricVersion",
             espressoCore        : "androidx.test.espresso:espresso-core:$espressoVersion",
-            androidTestRunner   : "androidx.test:runner:$androidXTestRunnerVersion"
+            androidTestRunner   : "androidx.test:runner:$androidXTestVersion",
+            lifecycleTest       : "androidx.arch.core:core-testing:$archLifecycleVersion"
     ]
 }
