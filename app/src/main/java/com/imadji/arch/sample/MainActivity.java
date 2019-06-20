@@ -1,12 +1,13 @@
 package com.imadji.arch.sample;
 
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.imadji.arch.domain.model.Movie;
 import com.imadji.arch.domain.usecase.GetPopularMovies;
 

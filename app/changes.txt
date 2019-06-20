@@ -2,6 +2,7 @@
 - Refactor NetworkModule related to Retrofit
 - Move ApiService client back to data layer
 - Implement get popular movies use case
+- Migrate to AndroidX
 
 2019-06-19:
 - Added dagger2 library

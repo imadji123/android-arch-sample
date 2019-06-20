@@ -55,4 +55,6 @@ dependencies {
     /* Test Libs */
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockitoCore
+    androidTestImplementation testDependencies.androidTestRunner
+    androidTestImplementation testDependencies.mockitoAndroid
 }
