@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.imadji.arch.domain.interactor.HomeInteractor;
 import com.imadji.arch.domain.model.Movie;
-import com.imadji.arch.domain.repository.MovieRepository;
+import com.imadji.arch.domain.usecase.GetPopularMovies;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "coba-rx";
 
     @Inject
-    MovieRepository movieRepository;
+    GetPopularMovies getPopularMovies;
 
     @BindView(R.id.rootView)
     ConstraintLayout constraintLayout;
@@ -67,14 +66,7 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
-//        PreferencesHelper preferencesHelper = new PreferencesHelper(this);
-//        MovieCache memoryMovieCache = new MemoryMovieCache(preferencesHelper);
-//        CachedMovieDataSource cachedDataSource = new CachedMovieDataSource(memoryMovieCache);
-//        RemoteMovieDataSource remoteDataSource = new RemoteMovieDataSource(TmdbService.getTmdbApi());
-//        MovieRepository repository = new MovieDataRepository(cachedDataSource, remoteDataSource);
-        HomeInteractor homeInteractor = new HomeInteractor(movieRepository);
-
-        homeInteractor.getPopularMovies()
+        getPopularMovies.execute()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<List<Movie>>() {

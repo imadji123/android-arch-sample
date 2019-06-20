@@ -8,8 +8,12 @@ import java.util.List;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
+/**
+ * Created by imadji on 06/14/2019.
+ */
+
 public class CachedMovieDataSource implements MovieDataSource {
-    private MovieCache movieCache;
+    private final MovieCache movieCache;
 
     public CachedMovieDataSource(MovieCache movieCache) {
         this.movieCache = movieCache;

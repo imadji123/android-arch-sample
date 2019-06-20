@@ -6,6 +6,10 @@ import java.util.List;
 
 import io.reactivex.Single;
 
+/**
+ * Created by imadji on 06/14/2019.
+ */
+
 public interface MovieDataSource {
 
     Single<List<Movie>> getPopularMovies();
