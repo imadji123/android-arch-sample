@@ -42,10 +42,11 @@ dependencies {
 
     implementation dataDependencies.appCompat
 
-    /* Retrofit */
+    /* Retrofit, Logging Interceptor, Gson */
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitGson
     implementation dataDependencies.retrofitRxJava
+    implementation dataDependencies.okHttpLogging
 
     /* RxAndroid, RxJava */
     implementation dataDependencies.rxAndroid

@@ -126,9 +126,6 @@ dependencies {
 
     /* Retrofit */
     implementation appDependencies.retrofit
-    implementation appDependencies.retrofitGson
-    implementation appDependencies.retrofitRxJava
-    implementation appDependencies.okHttpLogging
 
     /* Dagger for Dependency Injection */
     implementation appDependencies.dagger

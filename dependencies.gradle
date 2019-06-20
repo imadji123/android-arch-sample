@@ -33,10 +33,7 @@ ext {
             glide               : "com.github.bumptech.glide:glide:$glideVersion",
             glideCompiler       : "com.github.bumptech.glide:compiler:$glideVersion",
             firebaseCore        : "com.google.firebase:firebase-core:$firebaseVersion",
-            okHttpLogging       : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
             retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofitGson        : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            retrofitRxJava      : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
             rxAndroid           : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             rxJava              : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             dagger              : "com.google.dagger:dagger:$daggerVersion",
@@ -55,6 +52,7 @@ ext {
             retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitGson        : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             retrofitRxJava      : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            okHttpLogging       : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
             rxAndroid           : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             rxJava              : "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     ]

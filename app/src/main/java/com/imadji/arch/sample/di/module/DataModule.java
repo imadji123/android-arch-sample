@@ -41,7 +41,6 @@ public class DataModule {
     MovieRepository provideMovieRepository(MovieCache movieCache, TmdbApi tmdbApi) {
         CachedMovieDataSource cachedDataSource = new CachedMovieDataSource(movieCache);
         RemoteMovieDataSource remoteDataSource = new RemoteMovieDataSource(tmdbApi);
-
         return new MovieDataRepository(cachedDataSource, remoteDataSource);
     }
 }
