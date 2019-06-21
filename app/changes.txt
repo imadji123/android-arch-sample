@@ -5,6 +5,7 @@
 - Migrate to AndroidX
 - Add architecture lifecycle components (LiveData & ViewModel)
 - Created initial home screen with ViewModel
+- Handle viewState & errorState for home popular movies
 
 2019-06-19:
 - Added dagger2 library
