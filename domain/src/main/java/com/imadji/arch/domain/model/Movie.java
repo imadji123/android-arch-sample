@@ -5,6 +5,12 @@ public class Movie {
     private String title;
     private String posterUrl;
 
+    public Movie(long id, String title, String posterUrl) {
+        this.id = id;
+        this.title = title;
+        this.posterUrl = posterUrl;
+    }
+
     public long getId() {
         return id;
     }

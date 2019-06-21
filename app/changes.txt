@@ -1,5 +1,7 @@
 2019-06-21:
 - Bind popular movies into view adapter
+- Created mapper for movie data entity
+- Added movie selected listener
 
 2019-06-20:
 - Refactor NetworkModule related to Retrofit

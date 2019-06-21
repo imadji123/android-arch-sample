@@ -1,10 +1,12 @@
 package com.imadji.arch.data.source.remote;
 
+import com.imadji.arch.data.entity.MovieData;
+import com.imadji.arch.data.mapper.MovieDataMapper;
 import com.imadji.arch.data.source.MovieDataSource;
 import com.imadji.arch.data.source.remote.api.TmdbApi;
-import com.imadji.arch.data.source.remote.response.MovieListResponse;
 import com.imadji.arch.domain.model.Movie;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Single;
@@ -16,6 +18,8 @@ import io.reactivex.Single;
 public class RemoteMovieDataSource implements MovieDataSource {
     private final TmdbApi tmdbApi;
 
+    private final MovieDataMapper movieDataMapper = new MovieDataMapper();
+
     public RemoteMovieDataSource(TmdbApi tmdbApi) {
         this.tmdbApi = tmdbApi;
     }
@@ -23,6 +27,12 @@ public class RemoteMovieDataSource implements MovieDataSource {
     @Override
     public Single<List<Movie>> getPopularMovies() {
         return tmdbApi.getPopularMovies()
-                .map(MovieListResponse::getMovieList);
+                .map(movieListResponse -> {
+                    List<Movie> movies= new ArrayList<>();
+                    for (MovieData movie : movieListResponse.getMovieList()) {
+                        movies.add(movieDataMapper.mapFrom(movie));
+                    }
+                    return movies;
+                });
     }
 }

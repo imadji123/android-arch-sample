@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -27,7 +26,12 @@ import butterknife.ButterKnife;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
 
+    private final OnMovieSelectedListener onMovieSelectedListener;
     private List<Movie> movieList = new ArrayList<>();
+
+    public MoviesAdapter(OnMovieSelectedListener onMovieSelectedListener) {
+        this.onMovieSelectedListener = onMovieSelectedListener;
+    }
 
     @NonNull
     @Override
@@ -40,7 +44,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movieList.get(position);
-        holder.bind(movie);
+        holder.bind(movie, onMovieSelectedListener);
     }
 
     @Override
@@ -59,19 +63,21 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     class MovieViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.poster)
         ImageView poster;
-        @BindView(R.id.title)
-        TextView title;
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
 
-        void bind(Movie movie) {
-            title.setText(movie.getTitle());
+        void bind(Movie movie, OnMovieSelectedListener listener) {
             Glide.with(itemView)
-                    .load("https://image.tmdb.org/t/p/w342" + movie.getPosterUrl())
+                    .load(movie.getPosterUrl())
                     .into(poster);
+            itemView.setOnClickListener(v -> listener.onMovieSelected(movie));
         }
+    }
+
+    public interface OnMovieSelectedListener {
+        void onMovieSelected(Movie movie);
     }
 }

@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        adapter = new MoviesAdapter();
+        adapter = new MoviesAdapter(movie -> showSnackbar(movie.getTitle() + " selected!"));
         recyclerView.setLayoutManager(new GridLayoutManager(activity, 2));
         recyclerView.setAdapter(adapter);
     }

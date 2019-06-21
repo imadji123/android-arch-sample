@@ -1,9 +1,13 @@
 package com.imadji.arch.data.source.remote.response;
 
 import com.google.gson.annotations.SerializedName;
-import com.imadji.arch.domain.model.Movie;
+import com.imadji.arch.data.entity.MovieData;
 
 import java.util.List;
+
+/**
+ * Created by imadji on 06/10/2019.
+ */
 
 public class MovieListResponse {
 
@@ -14,7 +18,7 @@ public class MovieListResponse {
     @SerializedName("total_pages")
     private int totalPages;
     @SerializedName("results")
-    private List<Movie> movieList;
+    private List<MovieData> movieList;
 
     public int getPage() {
         return page;
@@ -28,7 +32,7 @@ public class MovieListResponse {
         return totalPages;
     }
 
-    public List<Movie> getMovieList() {
+    public List<MovieData> getMovieList() {
         return movieList;
     }
 
