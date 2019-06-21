@@ -1,6 +1,8 @@
 # Android Architecture Sample
 Experimental application with Reactive Clean Architecture.
 
+![Screenshots](https://github.com/imadji123/android-arch-sample/blob/master/images/screenshot_1.jpg)
+
 ## Technology stacks, libraries and tools used
 
 * [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
