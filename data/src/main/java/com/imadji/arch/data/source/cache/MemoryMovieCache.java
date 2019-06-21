@@ -10,7 +10,7 @@ import io.reactivex.Completable;
 import io.reactivex.Single;
 
 public class MemoryMovieCache implements MovieCache {
-    private static final long EXPIRATION_TIME = (60 * 10 * 1000);
+    private static final long EXPIRATION_TIME = (60 * 5 * 1000);
 
     private Preferences preferences;
 

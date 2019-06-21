@@ -1,11 +1,11 @@
 package com.imadji.arch.domain.model;
 
 public class Movie {
-    private String id;
+    private long id;
     private String title;
     private String posterUrl;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 

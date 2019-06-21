@@ -38,8 +38,6 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':domain')
-
     implementation dataDependencies.appCompat
 
     /* Retrofit, Logging Interceptor, Gson */
@@ -57,4 +55,6 @@ dependencies {
     testImplementation testDependencies.mockitoCore
     androidTestImplementation testDependencies.androidTestRunner
     androidTestImplementation testDependencies.mockitoAndroid
+
+    implementation project(':domain')
 }

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.imadji.arch.sample.BuildConfig;
 import com.imadji.arch.sample.MainApplication;
 import com.imadji.arch.sample.R;
+import com.imadji.arch.sample.view.adapter.MoviesAdapter;
 
 import javax.inject.Inject;
 
@@ -42,9 +45,12 @@ public class HomeFragment extends Fragment {
     TextView textView;
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     private Activity activity;
     private HomeViewModel viewModel;
+    private MoviesAdapter adapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,14 +61,6 @@ public class HomeFragment extends Fragment {
         if (savedInstanceState == null) {
             viewModel.getPopularMovies();
         }
-    }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ButterKnife.bind(this, view);
-        return view;
     }
 
     @Override
@@ -77,6 +75,22 @@ public class HomeFragment extends Fragment {
         viewModel.errorState.observe(this, throwable -> {
             if (throwable != null) showSnackbar(throwable.getMessage());
         });
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        ButterKnife.bind(this, view);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        adapter = new MoviesAdapter();
+        recyclerView.setLayoutManager(new GridLayoutManager(activity, 2));
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -99,7 +113,7 @@ public class HomeFragment extends Fragment {
 
     private void handleViewState(HomeViewState homeViewState) {
         showProgressBar(homeViewState.showLoading);
-        if (homeViewState.data != null) showSnackbar("Popular Movies: " + homeViewState.data.size());
+        if (homeViewState.data != null) adapter.updateMovies(homeViewState.data);
     }
 
     private void showProgressBar(boolean isLoading) {

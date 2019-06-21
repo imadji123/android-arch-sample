@@ -1,3 +1,6 @@
+2019-06-21:
+- Bind popular movies into view adapter
+
 2019-06-20:
 - Refactor NetworkModule related to Retrofit
 - Move ApiService client back to data layer
