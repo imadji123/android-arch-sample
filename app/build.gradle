@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -82,6 +85,10 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 configurations.all {
@@ -98,6 +105,11 @@ configurations.all {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    /* Kotlin */
+    implementation rootProject.ext.kotlin
+    implementation rootProject.ext.ktxCore
+
+    /* Android Libs */
     implementation rootProject.ext.appCompat
     implementation rootProject.ext.materialDesign
     implementation rootProject.ext.legacySupport
@@ -110,12 +122,12 @@ dependencies {
 
     /* Butterknife for inject Views */
     implementation rootProject.ext.butterknife
-    annotationProcessor rootProject.ext.butterknifeCompiler
+    kapt rootProject.ext.butterknifeCompiler
 
     /* Glide for Image Loading */
     implementation rootProject.ext.glide
     implementation rootProject.ext.glideTansformation
-    annotationProcessor rootProject.ext.glideCompiler
+    kapt rootProject.ext.glideCompiler
 
     /* Firebase */
     implementation rootProject.ext.firebaseAnalytics
@@ -131,7 +143,7 @@ dependencies {
 
     /* Dagger for Dependency Injection */
     implementation rootProject.ext.dagger
-    annotationProcessor rootProject.ext.daggerCompiler
+    kapt rootProject.ext.daggerCompiler
 
     /* Test Libs */
     testImplementation rootProject.ext.jUnit

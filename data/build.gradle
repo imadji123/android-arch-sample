@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -38,9 +41,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    /* Kotlin */
+    implementation rootProject.ext.kotlin
+    implementation rootProject.ext.ktxCore
+
     /* Dagger for Dependency Injection */
     implementation rootProject.ext.dagger
-    annotationProcessor rootProject.ext.daggerCompiler
+    kapt rootProject.ext.daggerCompiler
 
     /* Retrofit, Logging Interceptor, Gson */
     implementation rootProject.ext.retrofit

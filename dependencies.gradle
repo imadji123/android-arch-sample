@@ -42,11 +42,13 @@ ext {
     recyclerView = "androidx.recyclerview:recyclerview:$androidXVersion"
     rxAndroid = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     rxBinding = "com.jakewharton.rxbinding2:rxbinding:$rxBindingVersion"
+    rxBindingKotlin = "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxBindingVersion"
 
     // Core (Domain & Data)
     dagger = "com.google.dagger:dagger:$daggerVersion"
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
     firebaseAnalytics = "com.google.firebase:firebase-analytics:$firebaseVersion"
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     ktxCore = "androidx.core:core-ktx:$androidXVersion"
     loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
