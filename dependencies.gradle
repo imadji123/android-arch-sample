@@ -8,69 +8,59 @@ ext {
     // Libraries Version
     androidXVersion = "1.0.0"
     androidMaterialVersion = "1.0.0-rc01"
+    androidXTestVersion = "1.2.0"
     archLifecycleVersion = "2.0.0"
-    constraintLayoutVersion = "1.1.2"
     butterknifeVersion = "10.1.0"
-    glideVersion = "4.9.0"
-    okHttpVersion = "3.12.0"
-    retrofitVersion = "2.5.0"
-    firebaseVersion = "16.0.9"
-    rxAndroidVersion = "2.1.1"
-    rxJavaVersion = "2.2.9"
-    daggerVersion = "2.23.1"
+    constraintLayoutVersion = "1.1.2"
+    daggerVersion = "2.25.2"
     espressoVersion = "3.1.0"
+    firebaseVersion = "17.2.0"
+    glideVersion = "4.10.0"
+    glideTransformationVersion = "4.0.0"
     jUnitVersion = "4.12"
     mockitoVersion = "2.12.0"
+    okHttpVersion = "4.2.1"
+    retrofitVersion = "2.6.2"
     robolectricVersion = "4.2"
-    androidXTestVersion = "1.1.1"
-    archTestingVersion = "1.1.1"
+    rxJavaVersion = "2.2.14"
+    rxAndroidVersion = "2.1.1"
+    rxBindingVersion = "2.2.0"
 
-    // App
-    appDependencies = [
-            appCompat           : "androidx.appcompat:appcompat:$androidXVersion",
-            legacySupport       : "androidx.legacy:legacy-support-v4:$androidXVersion",
-            recyclerView        : "androidx.recyclerview:recyclerview:$androidXVersion",
-            constraintLayout    : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
-            lifecycleExtension  : "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion",
-            lifecycleCommon     : "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion",
-            design              : "com.google.android.material:material:$androidMaterialVersion",
-            butterknife         : "com.jakewharton:butterknife:$butterknifeVersion",
-            butterknifeCompiler : "com.jakewharton:butterknife-compiler:$butterknifeVersion",
-            glide               : "com.github.bumptech.glide:glide:$glideVersion",
-            glideCompiler       : "com.github.bumptech.glide:compiler:$glideVersion",
-            firebaseCore        : "com.google.firebase:firebase-core:$firebaseVersion",
-            retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            rxAndroid           : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            rxJava              : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            dagger              : "com.google.dagger:dagger:$daggerVersion",
-            daggerCompiler      : "com.google.dagger:dagger-compiler:$daggerVersion"
-    ]
+    // Libraries
+    // Presentation (UI/View)
+    appCompat = "androidx.appcompat:appcompat:$androidXVersion"
+    archLifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    archLifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion"
+    butterknife = "com.jakewharton:butterknife:$butterknifeVersion"
+    butterknifeCompiler = "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+    constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
+    glideTansformation = "jp.wasabeef:glide-transformations:$glideTransformationVersion"
+    legacySupport = "androidx.legacy:legacy-support-v4:$androidXVersion"
+    materialDesign = "com.google.android.material:material:$androidMaterialVersion"
+    recyclerView = "androidx.recyclerview:recyclerview:$androidXVersion"
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    rxBinding = "com.jakewharton.rxbinding2:rxbinding:$rxBindingVersion"
 
-    // Domain
-    domainDependencies = [
-            rxAndroid           : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            rxJava              : "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    ]
+    // Core (Domain & Data)
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    firebaseAnalytics = "com.google.firebase:firebase-analytics:$firebaseVersion"
+    ktxCore = "androidx.core:core-ktx:$androidXVersion"
+    loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    retrofitRxJava = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 
-    // Data
-    dataDependencies = [
-            appCompat           : "androidx.appcompat:appcompat:$androidXVersion",
-            retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofitGson        : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            retrofitRxJava      : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
-            okHttpLogging       : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
-            rxAndroid           : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            rxJava              : "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    ]
+    // Test (Core & UI)
+    androidTestRunner = "androidx.test:runner:$androidXTestVersion"
+    espressoCore = "androidx.test.espresso:espresso-core:$espressoVersion"
+    jUnit = "junit:junit:$jUnitVersion"
+    lifecycleTest ="androidx.arch.core:core-testing:$archLifecycleVersion"
+    mockitoCore = "org.mockito:mockito-inline:$mockitoVersion"
+    mockitoAndroid = "org.mockito:mockito-android:$mockitoVersion"
+    robolectric = "org.robolectric:robolectric:$robolectricVersion"
 
-    // Test
-    testDependencies = [
-            jUnit               : "junit:junit:$jUnitVersion",
-            mockitoCore         : "org.mockito:mockito-core:$mockitoVersion",
-            mockitoAndroid      : "org.mockito:mockito-android:$mockitoVersion",
-            robolectric         : "org.robolectric:robolectric:$robolectricVersion",
-            espressoCore        : "androidx.test.espresso:espresso-core:$espressoVersion",
-            androidTestRunner   : "androidx.test:runner:$androidXTestVersion",
-            lifecycleTest       : "androidx.arch.core:core-testing:$archLifecycleVersion"
-    ]
 }

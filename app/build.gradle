@@ -96,51 +96,49 @@ configurations.all {
 }
 
 dependencies {
-    def appDependencies = rootProject.ext.appDependencies
-    def testDependencies = rootProject.ext.testDependencies
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation appDependencies.appCompat
-    implementation appDependencies.design
-    implementation appDependencies.legacySupport
-    implementation appDependencies.recyclerView
-    implementation appDependencies.constraintLayout
+    implementation rootProject.ext.appCompat
+    implementation rootProject.ext.materialDesign
+    implementation rootProject.ext.legacySupport
+    implementation rootProject.ext.recyclerView
+    implementation rootProject.ext.constraintLayout
 
     /* Android Architecture Components */
-    implementation appDependencies.lifecycleExtension
-    implementation appDependencies.lifecycleCommon
+    implementation rootProject.ext.archLifecycleExtensions
+    implementation rootProject.ext.archLifecycleCommon
 
     /* Butterknife for inject Views */
-    implementation appDependencies.butterknife
-    annotationProcessor appDependencies.butterknifeCompiler
+    implementation rootProject.ext.butterknife
+    annotationProcessor rootProject.ext.butterknifeCompiler
 
     /* Glide for Image Loading */
-    implementation appDependencies.glide
-    annotationProcessor appDependencies.glideCompiler
+    implementation rootProject.ext.glide
+    implementation rootProject.ext.glideTansformation
+    annotationProcessor rootProject.ext.glideCompiler
 
     /* Firebase */
-    implementation appDependencies.firebaseCore
+    implementation rootProject.ext.firebaseAnalytics
 
     /* RxJava RxAndroid */
-    implementation appDependencies.rxJava
-    implementation appDependencies.rxAndroid
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxAndroid
 
     /* Retrofit */
-    implementation appDependencies.retrofit
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.retrofitGson
+    implementation rootProject.ext.retrofitRxJava
 
     /* Dagger for Dependency Injection */
-    implementation appDependencies.dagger
-    annotationProcessor appDependencies.daggerCompiler
+    implementation rootProject.ext.dagger
+    annotationProcessor rootProject.ext.daggerCompiler
 
     /* Test Libs */
-    testImplementation testDependencies.jUnit
-    testImplementation testDependencies.mockitoCore
-    testImplementation testDependencies.robolectric
-    testImplementation testDependencies.lifecycleTest
-    androidTestImplementation testDependencies.androidTestRunner
-    androidTestImplementation testDependencies.mockitoAndroid
-    androidTestImplementation testDependencies.espressoCore
+    testImplementation rootProject.ext.jUnit
+    testImplementation rootProject.ext.robolectric
+    testImplementation rootProject.ext.lifecycleTest
+    androidTestImplementation rootProject.ext.androidTestRunner
+    androidTestImplementation rootProject.ext.espressoCore
 
     implementation project(':domain')
     implementation project(':data')

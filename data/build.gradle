@@ -30,31 +30,33 @@ android {
         sourceCompatibility 1.8
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
-    def dataDependencies = rootProject.ext.dataDependencies
-    def testDependencies = rootProject.ext.testDependencies
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation dataDependencies.appCompat
+    /* Dagger for Dependency Injection */
+    implementation rootProject.ext.dagger
+    annotationProcessor rootProject.ext.daggerCompiler
 
     /* Retrofit, Logging Interceptor, Gson */
-    implementation dataDependencies.retrofit
-    implementation dataDependencies.retrofitGson
-    implementation dataDependencies.retrofitRxJava
-    implementation dataDependencies.okHttpLogging
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.retrofitGson
+    implementation rootProject.ext.retrofitRxJava
+    implementation rootProject.ext.loggingInterceptor
 
     /* RxAndroid, RxJava */
-    implementation dataDependencies.rxAndroid
-    implementation dataDependencies.rxJava
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
 
     /* Test Libs */
-    testImplementation testDependencies.jUnit
-    testImplementation testDependencies.mockitoCore
-    androidTestImplementation testDependencies.androidTestRunner
-    androidTestImplementation testDependencies.mockitoAndroid
+    testImplementation rootProject.ext.jUnit
+    testImplementation rootProject.ext.mockitoCore
+    androidTestImplementation rootProject.ext.androidTestRunner
+    androidTestImplementation rootProject.ext.mockitoAndroid
 
     implementation project(':domain')
 }
