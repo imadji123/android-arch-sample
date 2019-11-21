@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.imadji.arch.domain.model.Movie;
+import com.imadji.arch.domain.entity.Movie;
 import com.imadji.arch.sample.R;
 import com.imadji.arch.sample.helper.MovieDiffUtil;
 

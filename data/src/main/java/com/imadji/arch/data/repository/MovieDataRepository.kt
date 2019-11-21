@@ -1,24 +1,22 @@
 package com.imadji.arch.data.repository
 
-import com.imadji.arch.data.source.cache.CachedMovieDataSource
-import com.imadji.arch.data.source.remote.RemoteMovieDataSource
-import com.imadji.arch.domain.model.Movie
+import com.imadji.arch.data.common.mapToEntity
+import com.imadji.arch.data.source.MovieDataSource
+import com.imadji.arch.domain.entity.Movie
 import com.imadji.arch.domain.repository.MovieRepository
 
 import io.reactivex.Single
 import javax.inject.Inject
 
 class MovieDataRepository @Inject constructor(
-        private val cachedDataSource: CachedMovieDataSource,
-        private val remoteDataSource: RemoteMovieDataSource
+        private val remoteDataSource: MovieDataSource.Remote
 ) : MovieRepository {
 
-    override fun getPopularMovies(): Single<MutableList<Movie>> {
-        return if (!cachedDataSource.isEmpty && !cachedDataSource.isExpired) {
-            cachedDataSource.getPopularMovies()
-        } else {
-            remoteDataSource.getPopularMovies()
-                    .doOnSuccess { cachedDataSource.saveAll(it) }
+    override fun getPopularMovies(): Single<List<Movie>> {
+        return remoteDataSource.getPopularMovies().map { collection ->
+            collection.results.map { movie ->
+                movie.mapToEntity()
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.imadji.arch.sample.feature.home;
 
-import com.imadji.arch.domain.model.Movie;
+import com.imadji.arch.domain.entity.Movie;
 import com.imadji.arch.sample.common.ResultState;
 
 import java.util.List;

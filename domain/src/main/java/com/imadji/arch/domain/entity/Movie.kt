@@ -1,4 +1,4 @@
-package com.imadji.arch.domain.model
+package com.imadji.arch.domain.entity
 
 data class Movie(
         val id: Long,

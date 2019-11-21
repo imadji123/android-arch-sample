@@ -2,7 +2,7 @@ package com.imadji.arch.sample.helper;
 
 import androidx.recyclerview.widget.DiffUtil;
 
-import com.imadji.arch.domain.model.Movie;
+import com.imadji.arch.domain.entity.Movie;
 
 import java.util.List;
 

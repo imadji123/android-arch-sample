@@ -8,7 +8,6 @@ import com.imadji.arch.sample.di.home.HomeModule;
 import com.imadji.arch.sample.di.home.HomeSubComponent;
 import com.imadji.arch.sample.di.module.AppModule;
 import com.imadji.arch.sample.di.module.DataModule;
-import com.imadji.arch.sample.di.module.DomainModule;
 import com.imadji.arch.sample.di.module.NetworkModule;
 
 /**
@@ -33,8 +32,6 @@ public class MainApplication extends Application {
         mainComponent = DaggerMainComponent.builder()
                 .appModule(new AppModule(getApplicationContext()))
                 .networkModule(new NetworkModule(BASE_URL, API_KEY))
-                .dataModule(new DataModule())
-                .domainModule(new DomainModule())
                 .build();
     }
 

@@ -1,7 +1,7 @@
 package com.imadji.arch.data.source.cache;
 
 import com.imadji.arch.data.source.local.preference.Preferences;
-import com.imadji.arch.domain.model.Movie;
+import com.imadji.arch.domain.entity.Movie;
 
 import java.util.ArrayList;
 import java.util.List;

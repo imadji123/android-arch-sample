@@ -1,6 +1,6 @@
 package com.imadji.arch.domain.common
 
-import com.imadji.arch.domain.model.Movie
+import com.imadji.arch.domain.entity.Movie
 
 class TestUtil {
 

@@ -1,3 +1,6 @@
+2019-11-21:
+- Migrate to kotlin for data module
+
 2019-11-20:
 - Ignore android studio config file to be push to the repo
 - Update project & code style config

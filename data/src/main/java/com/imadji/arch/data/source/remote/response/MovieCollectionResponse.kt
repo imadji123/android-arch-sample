@@ -1,8 +1,15 @@
-package com.imadji.arch.data.entity
+package com.imadji.arch.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieData(
+data class MovieCollectionResponse(
+        @SerializedName("page") val page: Int,
+        @SerializedName("total_pages") val totalPages: Int,
+        @SerializedName("total_results") val totalResults: Int,
+        @SerializedName("results") val results: List<MovieResponse>
+)
+
+data class MovieResponse(
         @SerializedName("id") val id: Long,
         @SerializedName("title") val title: String,
         @SerializedName("overview") val overview: String,

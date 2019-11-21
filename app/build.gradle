@@ -140,6 +140,7 @@ dependencies {
     implementation rootProject.ext.retrofit
     implementation rootProject.ext.retrofitGson
     implementation rootProject.ext.retrofitRxJava
+    implementation rootProject.ext.loggingInterceptor
 
     /* Dagger for Dependency Injection */
     implementation rootProject.ext.dagger
